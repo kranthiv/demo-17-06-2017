@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "onboard tool",
+    "version": "1.0",
+    "browser_action": {
+        "default_title": "onboard"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "content/dist/main.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "onboard/dist/index.html"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
